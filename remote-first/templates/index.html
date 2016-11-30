@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Jobs for remote first companies</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/skeleton.css') }}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row"> 
+      <div style="margin-top: 0%">
+        <div class="logo-row">
+          <div class="twelve columns">
+          <img class="logo-large" src="{{ url_for('static', filename='images/remote-first-logo-250px.png') }}">
+          </div>
+        </div>
+        <p><u><strong><a href="{{ url_for('show_ads') }}">Remote First</a></strong></u> helps you find and advertise for jobs that don't depend on specific locales or regions. Find qualified people regardless of their location or timezone. Follow us on Twitter <a href="https://twitter.com/remotefirst">@remotefirst</a></p>
+        <form action="{{ url_for('search_ad') }}" method="post">
+          <div class="search-row">
+            <div class="row" style="background-color: rgba(193,188,188,0.3); padding: 1px; padding-left: 20px; padding-right: 20px; padding-top: 15px; padding-bottom: 0px; border-radius:4px;">
+              <div class="four columns">
+                <input class="u-full-width" placeholder="Search: devops, python" name="search_ad" id="search_ad" type="search">
+              </div>
+              <div class="eight columns">
+                <a class="button button-primary" href="{{ url_for('submit_ad') }}">Submit A Job: $50 for 30 days.</a>
+              </div>
+            </div>
+          </div>
+        </form>
+        {% for ad in ads %}
+        <div class="row">
+          <hr \>
+          <div class="three columns">
+            <strong>{{ ad.companyName }}</strong>
+          </div>
+          <div class="three columns">
+            <a href="{{ url_for('ad_page', id = ad.ad_id) }}">{{ ad.jobTitle|safe}}</a>
+          </div>
+          <div class="three columns" style="background-color: rgba(193,188,188,0.3); padding: 1px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; border-radius:4px;">
+            {{ ad.jobType }}
+          </div>
+          <div class="two columns">{{ ad.publishDate }}
+          </div>
+        </div>
+        {% else %}
+          <p>No ads so far!</p>
+        </div>
+        {% endfor %}
+      <br>
+    </div>
+  </div>
+  <script>
+  <!-- Analytics code goes here -->
+  </script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

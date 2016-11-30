@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Jobs for remote first companies</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/skeleton.css') }}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row"> 
+      <div style="margin-top: 0%">
+        <div class="logo-row">
+          <div class="twelve columns">
+          <img class="logo-large" src="{{ url_for('static', filename='images/remote-first-logo-250px.png') }}">
+          </div>
+        </div>
+        <div class="row">
+        </div>
+        <p align="center">Thanks for using Remote First! <a href="{{ url_for('ad_page', id = ad_id['ad_id']) }}">Your ad is now available</a>.</p>
+        <div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  <!-- Analytics code goes here -->
+  </script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Jobs for remote first companies</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/skeleton.css') }}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row"> 
+      <div style="margin-top: 3%">
+        <a href="{{ url_for('show_ads') }}">
+        <img class="logo-small" style="max-width: 10%; min-width: 125px; height: auto;" src="{{ url_for('static', filename='images/remote-first-logo-250px.png') }}">
+        </a>
+        <hr style="margin-top: 0rem; margin-bottom: 1rem;" />
+        <a href="{{ url_for('show_ads') }}" align="right">Back to jobs</a>
+        <hr style="border-top: 0px;" />
+        <h4>{{ ad_details['jobTitle'] }}</h4>
+        <strong>{{ ad_details['companyName'] }}</strong>
+        <br>
+        <a href="{{ ad_details['companyURL'] }}">{{ ad_details['companyURL'] }}</a>
+        <hr \>
+        {% filter markdown %}
+{{ ad_details['jobDescription'] }}
+        {% endfilter%}
+        <div style="background-color: rgba(193,188,188,0.3); padding: 1px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px;">
+          <h6><strong>Apply For This Job: </strong></h6>
+          {{ ad_details['howToApply'] }}
+        </div>
+        <hr \>
+        <div>
+          <p>Happy with how your job looks? If so click the pay button below to pay, if not just hit the back button and modify the job as needed.</p>
+          <form action="/pay" method="post">
+            <input type="hidden" name="ad_details" value="{{ ad_details }}"/>
+            <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button" data-key="{{ key }}"
+                    data-description="Ad Payment"
+                    data-name="Remote-First.com"
+                    data-amount="5000"
+                    data-locale="auto"></script>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  <!-- Analytics code goes here -->
+  </script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

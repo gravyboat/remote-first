@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Jobs for remote first companies</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/normalize.css') }}">
+  <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='css/skeleton.css') }}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div style="margin-top: 10%">
+        Your listing will be available for 30 days. After this time the ad will be removed. You can always post again after this ad has expired.
+        <hr \>
+      </div>
+    </div>
+  <!-- Form Layout -->
+      <div id="form" class="form"> 
+        <H5><strong><a>Step One: Detail your job</a></strong></H5>
+        <form action="{{ url_for('preview_ad') }}" method="post">
+          <div class="row">
+            <div class="six columns">
+              <label for="jobTitle" class="u-pull-left">Job Title</label>
+              <p><input class="u-full-width" placeholder="" id="jobTitle" name="jobTitle" type="text" required></p>
+            </div>
+          </div>
+          <p><strong>Job Type</strong></p>
+            <label class="programmerCheckbox">
+              <input type="radio" value="Programmer" name="jobType">
+              <span class="label-body">Programmer</span>
+            </label>
+            <label class="designCheckbox">
+              <input type="radio" value="Design" name="jobType">
+              <span class="label-body">Design</span>
+            </label>
+            <label class="customerSupportCheckbox">
+              <input type="radio" value="Customer Support" name="jobType">
+              <span class="label-body">Customer Support</span>
+            </label>
+            <label class="devOpsSysadminCheckbox">
+              <input type="radio" value="DevOps" name="jobType">
+              <span class="label-body">DevOps</span>
+            </label>
+            <label class="marketingCheckbox">
+              <input type="radio" value="Marketing" name="jobType">
+              <span class="label-body">Marketing</span>
+            </label>
+            <label class="managementCheckbox">
+              <input type="radio" value="Management" name="jobType">
+              <span class="label-body">Management</span>
+            </label>
+            <label class="otherCheckbox">
+              <input type="radio" value="Other" name="jobType">
+              <span class="label-body">Other</span>
+            </label>
+            <label for=jobDescription">Job Description</label>
+            <p><textarea class="u-full-width" placeholder="This form supports Markdown" id="jobDescription" name="jobDescription" required></textarea></p>
+            </label>
+            <label for=howToApply">How do people apply?</label>
+            <p><textarea class="u-full-width" placeholder="Send your application to recruiter@company.com" id="howToApply" name="howToApply" required></textarea></p>
+            </label>
+            <hr \>
+            <H5><strong><a>Tell us about your organization</a></strong></H5>
+            <div class="row">
+              <div class="six columns">
+                <label for="companyName" class="u-pull-left">Name</label>
+                <p><input class="u-full-width" placeholder="Your Company" id="companyName" name="companyName" type="text" required></p>
+                <label for="companyURL" class="u-pull-left">URL</label>
+                <p><input class="u-full-width" placeholder="https://yourcompany.com/careers/" id="companyURL" name="companyURL" type="text" required></p>
+              </div>
+            </div>
+                <p><input class="button-primary" value="Submit" type="submit"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script>
+  <!-- Analytics code goes here -->
+  </script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
