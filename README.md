@@ -14,12 +14,17 @@ shutting down this project here: INSERT LINK WHEN PUBLISHED
 Screenshots
 -----------
 
+#### Front Page
+
 ![alt text](https://github.com/gravyboat/remote-first/raw/master/preview_images/remote_first_frontpage.png "Front Page")
+
+#### Example Ad
 
 ![alt text](https://github.com/gravyboat/remote-first/raw/master/preview_images/remote_first_example_ad.png "Example Ad")
 
+#### Submission Page
 
-![alt text](https://github.com/gravyboat/remote-first/raw/master/preview_images/remote_first_submissions_page.png "Submission Page")
+![alt text](https://github.com/gravyboat/remote-first/raw/master/preview_images/remote_first_submission_page.png "Submission Page")
 
 How to set up the project
 -------------------------
