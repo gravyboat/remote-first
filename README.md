@@ -6,7 +6,9 @@ Remote-first is a job site written with Flask and backed by sqlite. This is the
 function to bypass the Stripe integration. This project is primarily just an
 example that you can use to learn from. It consists of 4 pages, an index page,
 an ad page that is unique based on the ad (which is identical to the preview
-page minus the checkout button), and a job submission page. You can read more
+page minus the checkout button), and a job submission page. Salt states to
+set up this project on a live server are available at:
+https://github.com/gravyboat/remote-first-salt. You can read more
 about the design of this project here:
 https://hungryadmin.com/starting-and-finishing-a-project.html and more about
 shutting down this project here: INSERT LINK WHEN PUBLISHED
