@@ -36,7 +36,8 @@ requirements via the requirements file (preferably inside a virtualenv),
 `pip install -r requirements.txt`, importing the schema to the
 appropriately named database
 (based on the conf), `sqlite3 db_remotefirst.db < schema.sql` by default while
-in the remote-first directory, and then running the main remotefirst.py file.
+in the remote-first directory, and then running the main remotefirst.py file
+`python remotefirst.py`.
 As noted above keep in mind that specific functionality is expected in terms
 of connectivity to Twitter and Stripe, you can easily modify these sections
 to exclude those requirements like I did during development.
