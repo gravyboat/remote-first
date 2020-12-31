@@ -11,7 +11,7 @@ set up this project on a live server are available at:
 https://github.com/gravyboat/remote-first-salt. You can read more
 about the design of this project here:
 https://hungryadmin.com/starting-and-finishing-a-project.html and more about
-shutting down this project here: INSERT LINK WHEN PUBLISHED
+shutting down this project here: https://hungryadmin.com/a-failed-projects-postmortem.html
 
 Screenshots
 -----------
